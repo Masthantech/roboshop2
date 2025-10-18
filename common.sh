@@ -78,6 +78,14 @@ mvn_setup () {
     VALIDATE $? "moving jar files to app dir"
 }
 
+python_setup () {
+    dnf install python3 gcc python3-devel -y &>> $LOG_FILE
+    VALIDATE $? "Installing python runtime"
+
+    pip3 install -r requirements.txt &>> $LOG_FILE
+    VALIDATE $? "Installing the dependencies using pip tool"
+
+}
 
 CHECK_ROOT () {
     if [ $USERID -ne 0 ] 
