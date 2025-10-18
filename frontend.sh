@@ -1,5 +1,4 @@
-source ./common
-
+source ./common.sh
 CHECK_ROOT 
 
 dnf module disable nginx -y &>>$LOG_FILE
