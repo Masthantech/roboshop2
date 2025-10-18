@@ -66,6 +66,19 @@ systemd_setup () {
     VALIDATE $? "Starting the $app_name service"
 }
 
+mvn_setup () {
+
+    dnf install maven -y &>>$LOG_FILE
+    VALIDATE $? "Installing maven" 
+
+    mvn clean package &>>$LOG_FILE
+    VALIDATE $? "Installing the dependencies using mvn tool"
+
+    mv target/shipping-1.0.jar shipping.jar &>>$LOG_FILE
+    VALIDATE $? "moving jar files to app dir"
+}
+
+
 CHECK_ROOT () {
     if [ $USERID -ne 0 ] 
     then 
