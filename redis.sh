@@ -1,3 +1,5 @@
+#!/bin/bash
+
 source ./common.sh
 CHECK_ROOT 
 
