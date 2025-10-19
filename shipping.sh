@@ -1,7 +1,9 @@
 #!/bin/bash 
 source ./common.sh
 app_name=shipping
-ROOT_CHECK
+CHECK_ROOT
+
+
 echo "Please enter the mysql password: "
 read -s mysql_pass
 
