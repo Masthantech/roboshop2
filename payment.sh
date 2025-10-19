@@ -5,7 +5,7 @@ app_name=payment
 
 CHECK_ROOT
 app_setup
-python-setup
+python_setup
 systemd_setup
 PRINT_TIME
 
